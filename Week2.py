@@ -10,22 +10,30 @@
     #SOLUTION
     import pandas as pd
 def proportion_of_education():
-    x=y=z=t=0
+    #x=y=z=t=0
 
     data = pd.read_csv('assets/NISPUF17.csv')
     S = pd.Series(data['EDUC1'])
 
     sum = len(S)
-    for index,value in S.items():
-        if value == 1 :
-            x+=1
-        elif value == 2 :
-            y+=1
-        elif value == 3:
-            z+=1
-        else:
-            t+=1
-        
+    
+    x = data[data['EDUC1'] == 1]
+    y = data[data['EDUC1'] == 1]
+    z = data[data['EDUC1'] == 1]
+    t = data[data['EDUC1'] == 1]
+
+#print(len(h))
+
+#for index,value in S.items():
+    #if value == 1 :
+        #x+=1
+    #elif value == 2 :
+        #y+=1
+    #elif value == 3:
+        #z+=1
+    #else:
+        #t+=1
+
     myDict={"less than high school" : x/sum,
             "high school" : y/sum,
             "more than high school but not college" : z/sum,
