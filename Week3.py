@@ -1,37 +1,37 @@
-###
-Question 1
-Load the energy data from the file assets/Energy Indicators.xls, which is a list of indicators of energy supply and renewable electricity production from the United Nations for the year 2013, and should be put into a DataFrame with the variable name of Energy.
 
-Keep in mind that this is an Excel file, and not a comma separated values file. Also, make sure to exclude the footer and header information from the datafile. The first two columns are unneccessary, so you should get rid of them, and you should change the column labels so that the columns are:
+#Question 1
+#Load the energy data from the file assets/Energy Indicators.xls, which is a list of indicators of energy supply and renewable electricity production from the United Nations for the year 2013, and should be put into a DataFrame with the variable name of Energy.
 
-['Country', 'Energy Supply', 'Energy Supply per Capita', '% Renewable]
+#Keep in mind that this is an Excel file, and not a comma separated values file. Also, make sure to exclude the footer and header information from the datafile. The first two columns are unneccessary, so you should get rid of them, and you should change the column labels so that the columns are:
 
-Convert Energy Supply to gigajoules (Note: there are 1,000,000 gigajoules in a petajoule). For all countries which have missing data (e.g. data with "...") make sure this is reflected as np.NaN values.
+#['Country', 'Energy Supply', 'Energy Supply per Capita', '% Renewable]
 
-Rename the following list of countries (for use in later questions):
+#Convert Energy Supply to gigajoules (Note: there are 1,000,000 gigajoules in a petajoule). For all countries which have missing data (e.g. data with "...") make sure this is reflected as np.NaN values.
 
-"Republic of Korea": "South Korea",
-"United States of America": "United States",
-"United Kingdom of Great Britain and Northern Ireland": "United Kingdom",
-"China, Hong Kong Special Administrative Region": "Hong Kong"
+#Rename the following list of countries (for use in later questions):
 
-There are also several countries with numbers and/or parenthesis in their name. Be sure to remove these, e.g. 'Bolivia (Plurinational State of)' should be 'Bolivia'. 'Switzerland17' should be 'Switzerland'.
+#"Republic of Korea": "South Korea",
+#"United States of America": "United States",
+#"United Kingdom of Great Britain and Northern Ireland": "United Kingdom",
+#"China, Hong Kong Special Administrative Region": "Hong Kong"
 
-Next, load the GDP data from the file assets/world_bank.csv, which is a csv containing countries' GDP from 1960 to 2015 from World Bank. Call this DataFrame GDP.
+#There are also several countries with numbers and/or parenthesis in their name. Be sure to remove these, e.g. 'Bolivia (Plurinational State of)' should be 'Bolivia'. 'Switzerland17' should be 'Switzerland'.
 
-Make sure to skip the header, and rename the following list of countries:
+#Next, load the GDP data from the file assets/world_bank.csv, which is a csv containing countries' GDP from 1960 to 2015 from World Bank. Call this DataFrame GDP.
 
-"Korea, Rep.": "South Korea", 
-"Iran, Islamic Rep.": "Iran",
-"Hong Kong SAR, China": "Hong Kong"
+#Make sure to skip the header, and rename the following list of countries:
 
-Finally, load the Sciamgo Journal and Country Rank data for Energy Engineering and Power Technology from the file assets/scimagojr-3.xlsx, which ranks countries based on their journal contributions in the aforementioned area. Call this DataFrame ScimEn.
+#"Korea, Rep.": "South Korea", 
+#"Iran, Islamic Rep.": "Iran",
+#"Hong Kong SAR, China": "Hong Kong"
 
-Join the three datasets: GDP, Energy, and ScimEn into a new dataset (using the intersection of country names). Use only the last 10 years (2006-2015) of GDP data and only the top 15 countries by Scimagojr 'Rank' (Rank 1 through 15).
+#Finally, load the Sciamgo Journal and Country Rank data for Energy Engineering and Power Technology from the file assets/scimagojr-3.xlsx, which ranks countries based on their journal contributions in the aforementioned area. Call this DataFrame ScimEn.
 
-The index of this DataFrame should be the name of the country, and the columns should be ['Rank', 'Documents', 'Citable documents', 'Citations', 'Self-citations', 'Citations per document', 'H index', 'Energy Supply', 'Energy Supply per Capita', '% Renewable', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'].
+#Join the three datasets: GDP, Energy, and ScimEn into a new dataset (using the intersection of country names). Use only the last 10 years (2006-2015) of GDP data and only the top 15 countries by Scimagojr 'Rank' (Rank 1 through 15).
 
-This function should return a DataFrame with 20 columns and 15 entries, and the rows of the DataFrame should be sorted by "Rank".
+#The index of this DataFrame should be the name of the country, and the columns should be ['Rank', 'Documents', 'Citable documents', 'Citations', 'Self-citations', 'Citations per document', 'H index', 'Energy Supply', 'Energy Supply per Capita', '% Renewable', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'].
+
+#This function should return a DataFrame with 20 columns and 15 entries, and the rows of the DataFrame should be sorted by "Rank".
 ###
 
 
@@ -86,10 +86,10 @@ def answer_one():
 
 
 ###
-Question 2
-The previous question joined three datasets then reduced this to just the top 15 entries. When you joined the datasets, but before you reduced this to the top 15 items, how many entries did you lose?
+#Question 2
+#The previous question joined three datasets then reduced this to just the top 15 entries. When you joined the datasets, but before you reduced this to the top 15 items, how many entries did you lose?
 
-This function should return a single number.
+#This function should return a single number.
 ###
 
 import pandas as pd
@@ -101,10 +101,10 @@ def answer_two():
 
 
 ###
-Question 3
-What are the top 15 countries for average GDP over the last 10 years?
+#Question 3
+#What are the top 15 countries for average GDP over the last 10 years?
 
-This function should return a Series named avgGDP with 15 countries and their average GDP sorted in descending order.
+#This function should return a Series named avgGDP with 15 countries and their average GDP sorted in descending order.
 ###
 
 def answer_three():
@@ -116,6 +116,10 @@ def answer_three():
     
 
 ###
+#Question 4
+#By how much had the GDP changed over the 10 year span for the country with the 6th largest average GDP?
+
+#This function should return a single number.
 
 
 def answer_four():
@@ -126,10 +130,10 @@ def answer_four():
 
 
 ###
-Question 5
-What is the mean energy supply per capita?
+#Question 5
+#What is the mean energy supply per capita?
 
-This function should return a single number.
+#This function should return a single number.
 ###
 
 def answer_five():
@@ -139,10 +143,10 @@ def answer_five():
     
     
 ###
-Question 6
-What country has the maximum % Renewable and what is the percentage?
+#Question 6
+#What country has the maximum % Renewable and what is the percentage?
 
-This function should return a tuple with the name of the country and the percentage.
+#This function should return a tuple with the name of the country and the percentage.
 ###
 
 def answer_six():
@@ -153,10 +157,11 @@ def answer_six():
     
     
 ###
-Question 7
-Create a new column that is the ratio of Self-Citations to Total Citations. What is the maximum value for this new column, and what country has the highest ratio?
 
-This function should return a tuple with the name of the country and the ratio.
+#Question 7
+#Create a new column that is the ratio of Self-Citations to Total Citations. What is the maximum value for this new column, and what country has the highest ratio?
+
+#This function should return a tuple with the name of the country and the ratio.
 ###
 
 def answer_seven():
@@ -171,10 +176,10 @@ def answer_seven():
 
 
 ###
-Question 8
-Create a column that estimates the population using Energy Supply and Energy Supply per capita. What is the third most populous country according to this estimate?
+#Question 8
+#Create a column that estimates the population using Energy Supply and Energy Supply per capita. What is the third most populous country according to this estimate?
 
-This function should return the name of the country
+#This function should return the name of the country
 ###
 
 def answer_eight():
@@ -187,10 +192,10 @@ def answer_eight():
     return temp.index.tolist()[2]
     
  ###
- Question 9
-Create a column that estimates the number of citable documents per person. What is the correlation between the number of citable documents per capita and the energy supply per capita? Use the .corr() method, (Pearson's correlation).
+# Question 9
+#Create a column that estimates the number of citable documents per person. What is the correlation between the number of citable documents per capita and the energy supply per capita? Use the .corr() method, (Pearson's correlation).
 
-This function should return a single number.
+#This function should return a single number.
 ###
 
 def answer_nine():
@@ -207,10 +212,10 @@ def answer_nine():
     
     
 ###
-Question 10
-Create a new column with a 1 if the country's % Renewable value is at or above the median for all countries in the top 15, and a 0 if the country's % Renewable value is below the median.
+#Question 10
+#Create a new column with a 1 if the country's % Renewable value is at or above the median for all countries in the top 15, and a 0 if the country's % Renewable value is below the median.
 
-This function should return a series named HighRenew whose index is the country name sorted in ascending order of rank.
+#This function should return a series named HighRenew whose index is the country name sorted in ascending order of rank.
 ###
 
 
